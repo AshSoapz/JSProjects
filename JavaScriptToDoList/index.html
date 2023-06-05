@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    #todo-list {
+      width: 300px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    #taskInput {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    li {
+      margin-bottom: 5px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    
+    .completed {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <div id="todo-list">
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    // Get references to HTML elements
+    const taskInput = document.getElementById('taskInput');
+    const taskList = document.getElementById('taskList');
+
+    // Add task to the list
+    function addTask() {
+      const taskText = taskInput.value;
+      if (taskText.trim() !== '') {
+        const taskItem = document.createElement('li');
+        taskItem.textContent = taskText;
+        taskList.appendChild(taskItem);
+        taskInput.value = '';
+      }
+    }
+
+    // Toggle task completion
+    function toggleComplete(event) {
+      const taskItem = event.target;
+      taskItem.classList.toggle('completed');
+    }
+
+    // Attach event listener to the task list
+    taskList.addEventListener('click', toggleComplete);
+  </script>
+</body>
+</html>
