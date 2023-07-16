@@ -53,7 +53,7 @@
       weatherData.textContent = '';
       error.textContent = '';
 
-      // Fetch weather data from API
+      // Fetch weather data from API, make sure you add an API key where it reads "YOUR_API_KEY"
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=YOUR_API_KEY`)
         .then(response => {
           if (!response.ok) {
