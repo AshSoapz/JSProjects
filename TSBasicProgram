@@ -1,0 +1,12 @@
+//In the terminal: npm install -g typescript
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+const result: number = add(5, 3);
+console.log(result); // Output: 8
+
+//In the terminal again :D tsc app.ts
+
+// Runnin the code is pretty simple honestly, node app.js to use the JS runtime - like node. 
